@@ -1,0 +1,21 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://gulimall200:3306/gulimall_ums?userUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    #数据库下划线和实体类驼峰统一
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+    banner: false
+  #告诉mp，sql映射文件的位置，默认值classpath*:/mapper/**/*.xml。
+  #  classpath表示只引用现在模块的类路径。lasspath*表示不止引用现在模块的类路径，还包括依赖jar包的类路径
+  mapper-locations: classpath:/mapper/**/*.xml
